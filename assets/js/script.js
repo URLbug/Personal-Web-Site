@@ -81,4 +81,15 @@ window.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+
+    const toggleBtn = document.getElementById("toggle-dark");
+    toggleBtn.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+      if (document.documentElement.classList.contains("dark")) {
+        toggleBtn.textContent = "☀️ Light mod";
+      } else {
+        toggleBtn.textContent = "🌙 Night mod";
+      }
+    });
 });

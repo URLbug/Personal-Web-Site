@@ -1,153 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Developer Portfolio</title>
 
-    <link rel="stylesheet" href="./assets/css/tailwind.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <script src="https://unpkg.com/@tailwindcss/browser@4.0.9"></script>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <style type="text/tailwindcss">
+    @import 'tailwindcss';
+
+    @custom-variant dark (&:where(.dark, .dark *));
+
+    @theme {
+        --color-bgContrast: #f9f9f9;
+    }
+
+    @layer theme {
+        .dark {
+            --color-bgContrast: #66C8B6;
+        }
+    }
+    </style>
 </head>
-<body class="bg-gray-200">
-    <header>
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <header class="p-4 flex justify-end">
+    <button id="toggle-dark" class="px-3 py-1 rounded bg-gray-300 text-gray-900 dark:bg-gray-700 dark:text-white">
+      🌙 Night mode
+    </button>
+  </header>
 
-    </header>
-
-    <main>
-        <div class="flex h-screen">
-            <div class="m-auto border bg-gray-100 rounded">
-                <div class="py-2 bg-black text-white">
-                    <p class="mx-10">Home</p>
-                </div>
-                <hr>
-                <div class="py-10 px-10 text-center">
-                    <div class="mb-2">
-                        <h1 class="text-2xl">
-                            Hello! I`m Timur!
-                        </h1>
-                    </div>
-                    <div class="mb-2">
-                        <h2 class="text-gray-600">
-                            Web-Developer, DevOps Engineer
-                        </h2>
-                    </div>
-                    <div>
-                        <nav>
-                            <div class="md:flex md:w-auto md:order-1 items-center justify-between w-full">
-                                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row">
-                                    <li>
-                                        <a href="#" data-target="#about" class="js-modal-open">
-                                            About
-                                        </a>
-                                    </li> 
-                                    <li>
-                                        <a href="#" data-target="#link" class="js-modal-open">
-                                            Link
-                                        </a>
-                                    </li> 
-                                    <li>
-                                        <a href="#" data-target="#works" class="js-modal-open">
-                                            Works
-                                        </a>
-                                    </li> 
-                                    <li>
-                                        <a href="#" data-target="#faq" class="js-modal-open">
-                                            Faq
-                                        </a>
-                                    </li> 
-                                    <li>
-                                        <a href="#" data-target="#contact" class="js-modal-open">
-                                            Contact
-                                        </a>
-                                    </li> 
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-
-            <!-- About -->
-            <div id="about" class="js-modal-window modal-window border rounded bg-gray-100" style="display: none;">
-                    <div class="modal-window-header bg-black sticky top-0">
-                        <div class="py-2 text-white flex items-center justify-between w-full">
-                            <p class="mx-10 js-title-modal">About</p>
-                            <a href="#" class="mx-10 js-close">[ &times; ]</a>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="px-10 py-10 text-start">
-                        Content<br><br>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br><br>
-                    </div>
-                </div>
-
-            <!-- Link -->
-            <div id="link" class="js-modal-window modal-window border rounded bg-gray-100" style="display: none;">
-                <div class="modal-window-header bg-black sticky top-0">
-                    <div class="py-2 text-white flex items-center justify-between w-full">
-                        <p class="mx-10 js-title-modal">Link</p>
-                        <a href="#" class="mx-10 js-close">[ &times; ]</a>
-                    </div>
-                </div>
-                <hr>
-                <div class="px-10 py-10 text-start">
-                    Content<br><br>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br><br>
-                </div>
-            </div>
-
-            <!-- Works -->
-           <div id="works" class="js-modal-window modal-window border rounded bg-gray-100" style="display: none;">
-                <div class="modal-window-header bg-black sticky top-0">
-                    <div class="py-2 text-white flex items-center justify-between w-full">
-                        <p class="mx-10 js-title-modal">Works</p>
-                        <a href="#" class="mx-10 js-close">[ &times; ]</a>
-                    </div>
-                </div>
-                <hr>
-                <div class="px-10 py-10 text-start">
-                    I'm Timue and I 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br><br>
-                </div>
-            </div>
-
-            <!-- FAQ -->
-            <div id="faq" class="js-modal-window modal-window border rounded bg-gray-100" style="display: none;">
-                <div class="modal-window-header bg-black sticky top-0">
-                    <div class="py-2 text-white flex items-center justify-between w-full">
-                        <p class="mx-10 js-title-modal">Faq</p>
-                        <a href="#" class="mx-10 js-close">[ &times; ]</a>
-                    </div>
-                </div>
-                <hr>
-                <div class="px-10 py-10 text-start">
-                    Content<br><br>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br><br>
-                </div>
-            </div>
-
-            <!-- Contact -->
-            <div id="contact" class="js-modal-window modal-window border rounded bg-gray-100" style="display: none;">
-                <div class="modal-window-header bg-black sticky top-0">
-                    <div class="py-2 text-white flex items-center justify-between w-full">
-                        <p class="mx-10 js-title-modal">Contact</p>
-                        <a href="#" class="mx-10 js-close">[ &times; ]</a>
-                    </div>
-                </div>
-                <hr>
-                <div class="px-10 py-10 text-start">
-                    Content<br><br>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br><br>
-                </div>
-            </div>
+  <main>
+    <div class="flex h-screen">
+      <div class="m-auto border border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700 rounded shadow-lg">
+        <div class="py-2 bg-white text-gray-900 dark:bg-gray-700 dark:text-white border-b border-gray-200 dark:border-gray-600">
+          <p class="mx-10">Home</p>
         </div>
-    </main>
 
-    <footer>
+        <hr class="border-gray-300 dark:border-gray-600"/>
 
-    </footer>
+        <div class="py-10 px-10 text-center">
+          <div class="mb-2">
+            <h1 class="text-2xl">Hello! I`m Timur!</h1>
+          </div>
+          <div class="mb-2">
+            <h2 class="text-gray-600 dark:text-gray-300">Web-Developer, DevOps Engineer</h2>
+          </div>
 
-    <script src="./assets/js/script.js"></script>
+          <div>
+            <nav>
+              <div class="md:flex md:w-auto md:order-1 items-center justify-between w-full">
+                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row">
+                  <li><a href="#" data-target="#about" class="js-modal-open">About</a></li>
+                  <li><a href="#" data-target="#link" class="js-modal-open">Link</a></li>
+                  <li><a href="#" data-target="#works" class="js-modal-open">Works</a></li>
+                  <li><a href="#" data-target="#faq" class="js-modal-open">Faq</a></li>
+                  <li><a href="#" data-target="#contact" class="js-modal-open">Contact</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- About -->
+      <div id="about" class="js-modal-window modal-window border border-gray-200 rounded bg-white dark:bg-gray-800 dark:border-gray-700 shadow-lg" style="display: none;">
+        <div class="modal-window-header bg-white dark:bg-gray-700 sticky top-0">
+          <div class="py-2 text-gray-900 dark:text-white flex items-center justify-between w-full">
+            <p class="mx-10 js-title-modal">About</p>
+            <a href="#" class="mx-10 js-close">[ &times; ]</a>
+          </div>
+        </div>
+        <hr class="border-gray-300 dark:border-gray-600"/>
+        <div class="px-10 py-10 text-start">
+          Content<br><br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br><br>
+        </div>
+      </div>
+
+      <!-- Link -->
+      <div id="link" class="js-modal-window modal-window border border-gray-200 rounded bg-white dark:bg-gray-800 dark:border-gray-700 shadow-lg" style="display: none;">
+        <div class="modal-window-header bg-white dark:bg-gray-700 sticky top-0">
+          <div class="py-2 text-gray-900 dark:text-white flex items-center justify-between w-full">
+            <p class="mx-10 js-title-modal">Link</p>
+            <a href="#" class="mx-10 js-close">[ &times; ]</a>
+          </div>
+        </div>
+        <hr class="border-gray-300 dark:border-gray-600"/>
+        <div class="px-10 py-10 text-start">
+          Content<br><br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br><br>
+        </div>
+      </div>
+
+      <!-- Works -->
+      <div id="works" class="js-modal-window modal-window border border-gray-200 rounded bg-white dark:bg-gray-800 dark:border-gray-700 shadow-lg" style="display: none;">
+        <div class="modal-window-header bg-white dark:bg-gray-700 sticky top-0">
+          <div class="py-2 text-gray-900 dark:text-white flex items-center justify-between w-full">
+            <p class="mx-10 js-title-modal">Works</p>
+            <a href="#" class="mx-10 js-close">[ &times; ]</a>
+          </div>
+        </div>
+        <hr class="border-gray-300 dark:border-gray-600"/>
+        <div class="px-10 py-10 text-start">
+          I'm Timur and I
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br><br>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div id="faq" class="js-modal-window modal-window border border-gray-200 rounded bg-white dark:bg-gray-800 dark:border-gray-700 shadow-lg" style="display: none;">
+        <div class="modal-window-header bg-white dark:bg-gray-700 sticky top-0">
+          <div class="py-2 text-gray-900 dark:text-white flex items-center justify-between w-full">
+            <p class="mx-10 js-title-modal">Faq</p>
+            <a href="#" class="mx-10 js-close">[ &times; ]</a>
+          </div>
+        </div>
+        <hr class="border-gray-300 dark:border-gray-600"/>
+        <div class="px-10 py-10 text-start">
+          Content<br><br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br><br>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div id="contact" class="js-modal-window modal-window border border-gray-200 rounded bg-white dark:bg-gray-800 dark:border-gray-700 shadow-lg" style="display: none;">
+        <div class="modal-window-header bg-white dark:bg-gray-700 sticky top-0">
+          <div class="py-2 text-gray-900 dark:text-white flex items-center justify-between w-full">
+            <p class="mx-10 js-title-modal">Contact</p>
+            <a href="#" class="mx-10 js-close">[ &times; ]</a>
+          </div>
+        </div>
+        <hr class="border-gray-300 dark:border-gray-600"/>
+        <div class="px-10 py-10 text-start">
+          Content<br><br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br><br>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center p-4 text-gray-600 dark:text-gray-400">
+    &#169; Copyright Timur Davidov
+  </footer>
+
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>

@@ -11,7 +11,6 @@ html, body {
   position: absolute; /* чтобы можно было двигать */
   max-width: 600px;
   width: 90%;
-  background: #f8f8f8;
   border-radius: 8px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.3);
   animation: win-open 0.25s ease-out;
@@ -19,8 +18,6 @@ html, body {
 
 .modal-window-header {
   cursor: move; /* перетаскивание */
-  background: black;
-  color: white;
   z-index: 10;
 }
 
