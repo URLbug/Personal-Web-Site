@@ -36,27 +36,27 @@
                             <div class="md:flex md:w-auto md:order-1 items-center justify-between w-full">
                                 <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row">
                                     <li>
-                                        <a href="#" class="js-modal-open">
+                                        <a href="#" data-target="#about" class="js-modal-open">
                                             About
                                         </a>
                                     </li> 
                                     <li>
-                                        <a href="#" class="js-modal-open">
+                                        <a href="#" data-target="#link" class="js-modal-open">
                                             Link
                                         </a>
                                     </li> 
                                     <li>
-                                        <a href="#" class="js-modal-open">
+                                        <a href="#" data-target="#works" class="js-modal-open">
                                             Works
                                         </a>
                                     </li> 
                                     <li>
-                                        <a href="#" class="js-modal-open">
+                                        <a href="#" data-target="#faq" class="js-modal-open">
                                             Faq
                                         </a>
                                     </li> 
                                     <li>
-                                        <a href="#" class="js-modal-open">
+                                        <a href="#" data-target="#contact" class="js-modal-open">
                                             Contact
                                         </a>
                                     </li> 
@@ -67,12 +67,76 @@
                 </div>
             </div>
 
-            <div class="js-modal-window modal-window m-auto border rounded bg-gray-100"
-                style="display: block; max-height: 80vh; overflow-y: auto;">
+            <div id="about" class="js-modal-window modal-window m-auto border rounded bg-gray-100"
+                style="display: none; max-height: 80vh; overflow-y: auto;">
                 <div class="modal-window-header bg-black sticky top-0">
                     <div class="py-2 text-white flex items-center justify-between w-full">
-                        <p class="mx-10 js-title-modal">Title</p>
-                        <a href="#" class="mx-10 js-close">&times;</a>
+                        <p class="mx-10 js-title-modal">About</p>
+                        <a href="#" class="mx-10 js-close">[ &times; ]</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="px-10 py-10 text-start">
+                    Content<br><br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br><br>
+                    <!-- Добавь много текста для проверки -->
+                </div>
+            </div>
+
+            <div id="link" class="js-modal-window modal-window m-auto border rounded bg-gray-100"
+                style="display: none; max-height: 80vh; overflow-y: auto;">
+                <div class="modal-window-header bg-black sticky top-0">
+                    <div class="py-2 text-white flex items-center justify-between w-full">
+                        <p class="mx-10 js-title-modal">Link</p>
+                        <a href="#" class="mx-10 js-close">[ &times; ]</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="px-10 py-10 text-start">
+                    Content<br><br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br><br>
+                    <!-- Добавь много текста для проверки -->
+                </div>
+            </div>
+
+            <div id="works" class="js-modal-window modal-window m-auto border rounded bg-gray-100"
+                style="display: none; max-height: 80vh; overflow-y: auto;">
+                <div class="modal-window-header bg-black sticky top-0">
+                    <div class="py-2 text-white flex items-center justify-between w-full">
+                        <p class="mx-10 js-title-modal">Works</p>
+                        <a href="#" class="mx-10 js-close">[ &times; ]</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="px-10 py-10 text-start">
+                    I'm Timue and I 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br><br>
+                    <!-- Добавь много текста для проверки -->
+                </div>
+            </div>
+
+            <div id="faq" class="js-modal-window modal-window m-auto border rounded bg-gray-100"
+                style="display: none; max-height: 80vh; overflow-y: auto;">
+                <div class="modal-window-header bg-black sticky top-0">
+                    <div class="py-2 text-white flex items-center justify-between w-full">
+                        <p class="mx-10 js-title-modal">Faq</p>
+                        <a href="#" class="mx-10 js-close">[ &times; ]</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="px-10 py-10 text-start">
+                    Content<br><br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br><br>
+                    <!-- Добавь много текста для проверки -->
+                </div>
+            </div>
+
+            <div id="contact" class="js-modal-window modal-window m-auto border rounded bg-gray-100"
+                style="display: none; max-height: 80vh; overflow-y: auto;">
+                <div class="modal-window-header bg-black sticky top-0">
+                    <div class="py-2 text-white flex items-center justify-between w-full">
+                        <p class="mx-10 js-title-modal">Contact</p>
+                        <a href="#" class="mx-10 js-close">[ &times; ]</a>
                     </div>
                 </div>
                 <hr>
