@@ -61,24 +61,24 @@ const modal = {
 };
 
 window.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".js-modal-window").forEach((modal_window) => {
-    modal.dragElement(modal_window);
+  document.querySelectorAll('.js-modal-open').forEach(link => {
+        link.addEventListener('click', e => {
+            const target = link.getAttribute('data-target'); // "#about"
+            const modal_window = document.querySelector(target);
 
-    const modal_close = modal_window.querySelector(".js-close");
-    if (modal_close) {
-      modal_close.addEventListener("click", function () {
-        modal_window.style.display = "none";
-      });
-    }
-  });
+            if (modal_window) {
+                const modal_close = modal_window.querySelector(".js-close");
+                modal_close.addEventListener("click", function () {
+                    modal_window.style.display = "none";
+                });
 
-  document.querySelectorAll(".js-modal-open").forEach((e) => {
-    e.addEventListener("click", function () {
-      const targetId = e.getAttribute('data-target'); // data-target="#idОкна"
-      const targetModal = document.querySelector(targetId);
-      if (targetModal) {
-        targetModal.style.display = "block";
-      }
+                modal_window.style.display = 'block';
+                modal.dragElement(modal_window);
+
+                // Центрируем окно как в Windows
+                modal_window.style.top = `${(window.innerHeight - modal_window.offsetHeight) / 2}px`;
+                modal_window.style.left = `${(window.innerWidth - modal_window.offsetWidth) / 2}px`;
+            }
+        });
     });
-  });
 });
