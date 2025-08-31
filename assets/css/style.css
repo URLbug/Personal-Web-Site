@@ -1,1 +1,9 @@
-@import "tailwindcss";
+.modal-window {
+  position: absolute;
+  z-index: 9;
+}
+
+.modal-window-header {
+  cursor: move;
+  z-index: 10;
+}
