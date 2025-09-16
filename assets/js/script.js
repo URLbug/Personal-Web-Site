@@ -86,5 +86,16 @@ window.addEventListener("DOMContentLoaded", function () {
       if (modal_window) modal_window.style.display = 'none';
     });
   });
+
+  const toggleBtn = document.getElementById("toggle-dark"); 
+  
+  toggleBtn.addEventListener("click", () => { 
+    document.documentElement.classList.toggle("dark"); 
+    if (document.documentElement.classList.contains("dark")) { 
+      toggleBtn.textContent = "☀️ Light mod"; 
+    } else { 
+      toggleBtn.textContent = "🌙 Night mod"; 
+    }
+  });
 });
 
