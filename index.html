@@ -1,16 +1,248 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Developer Portfolio</title>
 
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/tailwind.css">
+  <script src="https://unpkg.com/@tailwindcss/browser@4.0.9"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <style type="text/tailwindcss">
+    @import 'tailwindcss';
+
+    @custom-variant dark (&:where(.dark, .dark *));
+
+    @theme {
+        --color-bgContrast: #f9f9f9;
+    }
+
+    @layer theme {
+        .dark {
+            --color-bgContrast: #66C8B6;
+        }
+    }
+    </style>
 </head>
-<body>
-    <a class="text-3xl font-bold underline">
-        Hello world!  
-    </a>
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <header class="p-4 flex justify-end">
+    <button id="toggle-dark" class="px-3 py-1 rounded bg-gray-300 text-gray-900 dark:bg-gray-700 dark:text-white">
+      🌙 Night mode
+    </button>
+  </header>
+
+  <main>
+    <div class="flex h-screen">
+      <div class="m-auto border border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700 rounded shadow-lg">
+        <div class="py-2 bg-white text-gray-900 dark:bg-gray-700 dark:text-white border-b border-gray-200 dark:border-gray-600">
+          <p class="mx-10">Home</p>
+        </div>
+
+        <hr class="border-gray-300 dark:border-gray-600"/>
+
+        <div class="py-10 px-10 text-center">
+          <div class="mb-2">
+            <h1 class="text-2xl">Hello! I`m Timur!</h1>
+          </div>
+          <div class="mb-2">
+            <h2 class="text-gray-600 dark:text-gray-300">Web-Developer, DevOps Engineer</h2>
+          </div>
+
+          <div>
+            <nav>
+              <div class="md:flex md:w-auto md:order-1 items-center justify-between w-full">
+                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row">
+                  <li><a href="#" data-target="#about" class="hover:text-green-500 transition-colors duration-200 js-modal-open">About</a></li>
+                  <li><a href="#" data-target="#link" class="hover:text-green-500 transition-colors duration-200 js-modal-open">Link</a></li>
+                  <li><a href="#" data-target="#works" class="hover:text-green-500 transition-colors duration-200 js-modal-open">Works</a></li>
+                  <li><a href="#" data-target="#contact" class="hover:text-green-500 transition-colors duration-200 js-modal-open">Contact</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- About -->
+      <div id="about" class="js-modal-window modal-window border border-gray-200 rounded bg-white dark:bg-gray-800 dark:border-gray-700 shadow-lg" style="display: none;">
+        <div class="modal-window-header bg-white dark:bg-gray-700 sticky top-0">
+          <div class="py-2 text-gray-900 dark:text-white flex items-center justify-between w-full">
+            <p class="mx-10 js-title-modal">About</p>
+            <a href="#" class="mx-10 js-close" aria-label="Close modal">[ &times; ]</a>
+          </div>
+        </div>
+
+        <hr class="border-gray-300 dark:border-gray-600"/>
+
+        <div class="px-10 py-10 text-start space-y-4">
+          <div class="text-lg font-semibold flex items-center gap-2">
+            <span>💻</span>
+            <span>Timur Davydov — Backend Developer</span>
+          </div>
+
+          <p>
+            Over <strong>1.5 years</strong> of experience in web development using <strong>PHP, Laravel, 1C-Bitrix</strong> and <strong>Python</strong>.
+            I contributed to e-commerce platforms, marketplaces and web services, working with APIs, databases and server infrastructure (Linux, Nginx, Apache, Docker).
+          </p>
+
+          <p>
+            <strong>Core skills:</strong>
+            <span class="inline-block mr-1">PHP</span> · <span class="inline-block mr-1">MySQL</span> · <span class="inline-block mr-1">PostgreSQL</span> ·
+            <span class="inline-block mr-1">Git</span> · <span class="inline-block mr-1">JavaScript</span> · <span class="inline-block mr-1">Symfony</span> ·
+            <span class="inline-block mr-1">Vue.js</span> · <span class="inline-block mr-1">Golang</span> · <span class="inline-block mr-1">REST API</span>
+          </p>
+
+          <p>
+            Experienced in designing database and web-application architectures, creating custom components and improving existing solutions.
+            Comfortable working both in teams and independently; quick to learn new technologies and tackle complex problems.
+          </p>
+
+          <p>
+            <strong>Selected projects:</strong>
+            a commercial social network built on Laravel and a university diploma security service (both available in my portfolio).
+          </p>
+        </div>
+      </div>
+
+
+      <!-- Link -->
+      <div id="link" class="js-modal-window modal-window border border-gray-200 rounded bg-white dark:bg-gray-800 dark:border-gray-700 shadow-lg" style="display: none;">
+        <div class="modal-window-header bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-700 dark:to-gray-800 sticky top-0 rounded-t-lg">
+            <div class="py-4 text-gray-900 dark:text-white flex items-center justify-between w-full">
+                <p class="mx-10 js-title-modal">Links</p>
+                <a href="#" class="mx-10 js-close hover:text-red-500 transition-colors duration-200">[ &times; ]</a>
+            </div>
+        </div>
+        <hr class="border-gray-300 dark:border-gray-600"/>
+        <div class="px-8 py-8 text-center">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <a href="https://github.com/URLbug" class="hover:text-gray-500 transition-colors duration-200">
+                <i class="fa-brands fa-github"></i> GitHub
+            </a>
+            <a href="https://kaliningrad.hh.ru/resume/55c63724ff0d0ad5060039ed1f6550756b6571" class="hover:text-red-600 transition-colors duration-200">
+                <i class="fa-solid fa-file"></i> HH.ru
+            </a>
+          </div>
+          <a href="https://www.linkedin.com/in/timur-davidov-841144314/" class="hover:text-blue-400 transition-colors duration-200">
+                <i class="fa-brands fa-linkedin"></i> Linkedin
+            </a>
+        </div>
+      </div>
+
+      <!-- Works -->
+    <div id="works" class="js-modal-window modal-window border border-gray-200 rounded-lg bg-white dark:bg-gray-800 dark:border-gray-700 shadow-xl" style="display: none;">
+        <div class="modal-window-header bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-700 dark:to-gray-800 sticky top-0 rounded-t-lg">
+            <div class="py-4 text-gray-900 dark:text-white flex items-center justify-between w-full">
+                <p class="mx-10 js-title-modal">My works</p>
+                <a href="#" class="mx-10 js-close hover:text-red-500 transition-colors duration-200">[ &times; ]</a>
+            </div>
+        </div>
+        <hr class="border-gray-300 dark:border-gray-600"/>
+        <div class="px-8 py-8 text-start">
+            <div class="mb-10">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                        Pet-project
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-300 mt-2">
+                        My projects, Created for honing skills and experimenting
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <a href="https://beautiful.development-portfolio.online/" target="_blank" class="group bg-gradient-to-br from-white to-blue-50 dark:from-gray-700 dark:to-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex items-start">
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-gray-800 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">Beautiful</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Beautiful is an elegant social network created as a demonstration project for a portfolio. The platform embodies a modern approach to online communication, combining an intuitive interface with powerful functionality</p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-hover:text-indigo-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                </a>
+                <a href="https://secureguard.development-portfolio.online/" target="_blank" class="group bg-gradient-to-br from-white to-blue-50 dark:from-gray-700 dark:to-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex items-start">
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-gray-800 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">SecureGuard</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">
+                            SecureGuard is a site for submitting applications for various enterprise security services, familiarization with services and a brief description of the company itself.
+                        </p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-hover:text-indigo-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div>
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-white flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    Commercial-Project
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">Projects developed or/and were in my support for real clients and businesses</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <a href="https://cvetok39.ru" target="_blank" class="group bg-gradient-to-br from-white to-green-50 dark:from-gray-700 dark:to-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                    <h3 class="font-semibold text-gray-800 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Flower Holland</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">Online store of flowers and plants</p>
+                </a>
+                <a href="https://roomm.ru" target="_blank" class="group bg-gradient-to-br from-white to-green-50 dark:from-gray-700 dark:to-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                    <h3 class="font-semibold text-gray-800 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Room</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">Platform for selling clothes and things</p>
+                </a>
+                <a href="https://hommy.ru" target="_blank" class="group bg-gradient-to-br from-white to-green-50 dark:from-gray-700 dark:to-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                    <h3 class="font-semibold text-gray-800 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Hommy</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">Website for buying home interiors</p>
+                </a>
+                <a href="https://shadoofshop.ru" target="_blank" class="group bg-gradient-to-br from-white to-green-50 dark:from-gray-700 dark:to-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                    <h3 class="font-semibold text-gray-800 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Shadoofshop</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">Sale of building materials</p>
+                </a>
+                <a href="https://euro-avtomatika.ru" target="_blank" class="group bg-gradient-to-br from-white to-green-50 dark:from-gray-700 dark:to-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                    <h3 class="font-semibold text-gray-800 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Euro-Avtomatika</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">Website for selling equipment</p>
+                </a>
+                <a href="https://www.novikgroup.ru" target="_blank" class="group bg-gradient-to-br from-white to-green-50 dark:from-gray-700 dark:to-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                    <h3 class="font-semibold text-gray-800 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Novik Group</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">Landing site for a supply company</p>
+                </a>
+            </div>
+            </div>
+        </div>
+    </div>
+
+      <!-- Contact -->
+      <div id="contact" class="js-modal-window modal-window border border-gray-200 rounded bg-white dark:bg-gray-800 dark:border-gray-700 shadow-lg" style="display: none;">
+        <div class="modal-window-header bg-white dark:bg-gray-700 sticky top-0">
+          <div class="py-2 text-gray-900 dark:text-white flex items-center justify-between w-full">
+            <p class="mx-10 js-title-modal">Contact</p>
+            <a href="#" class="mx-10 js-close">[ &times; ]</a>
+          </div>
+        </div>
+        <hr class="border-gray-300 dark:border-gray-600"/>
+        <div class="px-8 py-8 text-center">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <a href="https://wa.me/qr/MQD5BLU7EWLSP1" class="hover:text-green-500 transition-colors duration-200">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://t.me/DavidovTimur39" class="hover:text-blue-600 transition-colors duration-200">
+                <i class="fa-brands fa-telegram"></i> Telegram
+            </a>
+          </div>
+          <a href="mailto:gemslove2@gmail.com" class="hover:text-gray-600 transition-colors duration-200">
+              <i class="fa-solid fa-envelope"></i> Gmail
+          </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center p-4 text-gray-600 dark:text-gray-400">
+    &#169; Copyright Timur Davidov
+  </footer>
+
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>
