@@ -3,12 +3,11 @@ const modal = {
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 
     const dragStart = (e) => {
-      e.preventDefault();
       if (e.type === "touchstart") {
         pos3 = e.touches[0].clientX;
         pos4 = e.touches[0].clientY;
         document.addEventListener("touchend", dragEnd);
-        document.addEventListener("touchmove", dragMove);
+        document.addEventListener("touchmove", dragMove, { passive: false }); // важно: passive false
       } else {
         pos3 = e.clientX;
         pos4 = e.clientY;
@@ -16,6 +15,7 @@ const modal = {
         document.addEventListener("mousemove", dragMove);
       }
     };
+
 
     const dragMove = (e) => {
       e.preventDefault();
@@ -61,35 +61,30 @@ const modal = {
 };
 
 window.addEventListener("DOMContentLoaded", function () {
+  // Открытие модального окна
   document.querySelectorAll('.js-modal-open').forEach(link => {
-        link.addEventListener('click', e => {
-            const target = link.getAttribute('data-target'); // "#about"
-            const modal_window = document.querySelector(target);
+    link.addEventListener('click', e => {
+      e.preventDefault(); // предотвратить переход по ссылке
+      const target = link.getAttribute('data-target'); 
+      const modal_window = document.querySelector(target);
+      if (!modal_window) return;
 
-            if (modal_window) {
-                const modal_close = modal_window.querySelector(".js-close");
-                modal_close.addEventListener("click", function () {
-                    modal_window.style.display = "none";
-                });
+      modal_window.style.display = 'block';
+      modal.dragElement(modal_window);
 
-                modal_window.style.display = 'block';
-                modal.dragElement(modal_window);
-
-                // Центрируем окно как в Windows
-                modal_window.style.top = `${(window.innerHeight - modal_window.offsetHeight) / 2}px`;
-                modal_window.style.left = `${(window.innerWidth - modal_window.offsetWidth) / 2}px`;
-            }
-        });
+      // Центрируем
+      modal_window.style.top = `${(window.innerHeight - modal_window.offsetHeight) / 2}px`;
+      modal_window.style.left = `${(window.innerWidth - modal_window.offsetWidth) / 2}px`;
     });
+  });
 
-
-    const toggleBtn = document.getElementById("toggle-dark");
-    toggleBtn.addEventListener("click", () => {
-      document.documentElement.classList.toggle("dark");
-      if (document.documentElement.classList.contains("dark")) {
-        toggleBtn.textContent = "☀️ Light mod";
-      } else {
-        toggleBtn.textContent = "🌙 Night mod";
-      }
+  // Закрытие модального окна
+  document.querySelectorAll('.js-close').forEach(closeBtn => {
+    closeBtn.addEventListener('click', e => {
+      e.preventDefault();
+      const modal_window = closeBtn.closest('.js-modal-window');
+      if (modal_window) modal_window.style.display = 'none';
     });
+  });
 });
+
